@@ -3,7 +3,6 @@ using Cysharp.Threading.Tasks;
 using Data.UnityObjects;
 using TMPro;
 using UnityEngine;
-using static Cysharp.Threading.Tasks.UniTask;
 using Random = UnityEngine.Random;
 
 namespace Controller
@@ -32,25 +31,23 @@ namespace Controller
                     }
                     else
                     {
-                        if (Input.inputString != " ")
+                        if (Input.inputString != " " && Input.inputString != "\n" && Input.inputString != "\r")
                         {
-                            Debug.Log(c);
                             _currentLetter += c;
                         }
+                        Debug.Log(c);
                         CheckWord();
                     }
 
                     letterText.text = _currentLetter;
                 }
+
             }
         }
 
         private async void CheckWord()
         {
             _isCorrect = true;
-            if (_currentLetter.Length > _currentWord.Length)
-            {
-            }
             if(Input.GetKeyDown(KeyCode.Space))
             {
                 if (_currentLetter.Length > _currentWord.Length)
@@ -81,7 +78,7 @@ namespace Controller
                     currentWordText.color = Color.red;
                 }
                 _currentLetter = "";
-                await Delay(TimeSpan.FromSeconds(0.5), ignoreTimeScale: false);
+                await UniTask.Delay(TimeSpan.FromSeconds(0.5), ignoreTimeScale: false);
                 _isCorrect = true;
                 _currentWord = wordBank.wordBank.turkishWords[Random.Range(0, wordBank.wordBank.turkishWords.Count)];
                 currentWordText.color = Color.white;
