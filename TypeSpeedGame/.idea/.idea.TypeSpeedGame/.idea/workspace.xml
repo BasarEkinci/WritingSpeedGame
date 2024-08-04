@@ -5,22 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="677b2af9-a92b-4a92-beca-af5743b83b13" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.TypeSpeedGame/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ImportedAssets/Fonts/Quicksand/Quicksand-Regular SDF.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ImportedAssets/Fonts/Quicksand/Quicksand-Regular SDF.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ImportedAssets/Fonts/caviar_dreams.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ImportedAssets/Fonts/caviar_dreams/CaviarDreams SDF.asset" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ImportedAssets/Fonts/caviar_dreams/CaviarDreams SDF.asset.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ImportedAssets/Fonts/caviar_dreams/CaviarDreams.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ImportedAssets/Fonts/caviar_dreams/CaviarDreams.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ImportedAssets/Fonts/caviar_dreams/CaviarDreams_Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ImportedAssets/Fonts/caviar_dreams/CaviarDreams_Bold.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ImportedAssets/Fonts/caviar_dreams/CaviarDreams_BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ImportedAssets/Fonts/caviar_dreams/CaviarDreams_BoldItalic.ttf.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ImportedAssets/Fonts/caviar_dreams/CaviarDreams_Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ImportedAssets/Fonts/caviar_dreams/CaviarDreams_Italic.ttf.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/MonoSingleton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Extensions/MonoSingleton.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Signals.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Signals/TypingSignals.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Signals/TypingSignals.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TypeSpeedGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TypeSpeedGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controller/LetterInputController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controller/LetterInputController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +111,9 @@
       <workItem from="1722452144666" duration="5862000" />
       <workItem from="1722500813845" duration="1401000" />
       <workItem from="1722685210929" duration="5509000" />
-      <workItem from="1722691986111" duration="2046000" />
+      <workItem from="1722691986111" duration="2099000" />
+      <workItem from="1722707477874" duration="981000" />
+      <workItem from="1722767344840" duration="657000" />
     </task>
     <servers />
   </component>
