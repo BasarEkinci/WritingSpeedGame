@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="677b2af9-a92b-4a92-beca-af5743b83b13" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controller/SpeedController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Controller/SpeedController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CarManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CarManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameManager.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TypeSpeedGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TypeSpeedGame/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/UnityObjects/CarStatsSO.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/UnityObjects/CarStatsSO.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ValueObjects/CarStats.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Data/ValueObjects/CarStats.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Data/UnityObjects/WordBankSO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Data/UnityObjects/WordBankSO.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -113,7 +110,7 @@
       <workItem from="1722685210929" duration="5509000" />
       <workItem from="1722691986111" duration="2099000" />
       <workItem from="1722707477874" duration="981000" />
-      <workItem from="1722767344840" duration="2215000" />
+      <workItem from="1722767344840" duration="2664000" />
     </task>
     <servers />
   </component>

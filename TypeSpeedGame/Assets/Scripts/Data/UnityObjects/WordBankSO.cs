@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Data.UnityObjects
 {
-    [CreateAssetMenu(fileName = "WordBank", menuName = "WordBank",order = 1)]
+    [CreateAssetMenu(fileName = "WordBank", menuName = "TypeSpeedGame/WordBank",order = 1)]
     public class WordBankSO : ScriptableObject
     {
         public WordBank wordBank;
