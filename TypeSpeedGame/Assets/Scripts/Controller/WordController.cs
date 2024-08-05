@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
 using Data.UnityObjects;
 using TMPro;
@@ -7,20 +8,26 @@ using Random = UnityEngine.Random;
 
 namespace Controller
 {
-    public class LetterInputController : MonoBehaviour
+    public class WordController : MonoBehaviour
     {
         [SerializeField] private TMP_Text letterText;
         [SerializeField] private TextMeshProUGUI currentWordText;
         [SerializeField] private WordBankSO wordBank;
+        
         private string _currentLetter;
-        private string _currentWord = "target";
+        private string _currentWord;
         private bool _isCorrect;
-        private void Update()
+        private List<string> _wordList;
+
+        internal void SetInitialWord()
         {
-            SetPlayerInput();
+            _currentLetter = "";
+            _wordList = wordBank.wordBank.turkishWords;
+            _currentWord = _wordList[Random.Range(0, _wordList.Count)];
+            currentWordText.text = _currentWord;
         }
 
-        private void SetPlayerInput()
+        internal void SetPlayerInput()
         {
             if(Input.anyKeyDown)
             {
@@ -48,7 +55,7 @@ namespace Controller
         private void CheckWord()
         {
             _isCorrect = true;
-            if(Input.GetKeyDown(KeyCode.Space))
+            if(Input.GetKeyDown(KeyCode.Space) && _currentLetter.Length > 0)
             {
                 if (_currentLetter.Length > _currentWord.Length)
                 {
@@ -69,7 +76,7 @@ namespace Controller
                     }
                 }
                 SetTextColor();
-                ClearInputArea();
+                ClearInputArea(_wordList);
             }
         }
 
@@ -86,12 +93,12 @@ namespace Controller
         }
         
         // ReSharper disable Unity.PerformanceAnalysis
-        private async void ClearInputArea()
+        private async void ClearInputArea(List<string> currentWordList)
         {
             _currentLetter = "";
             await UniTask.Delay(TimeSpan.FromSeconds(0.5), ignoreTimeScale: false);
             _isCorrect = true;
-            _currentWord = wordBank.wordBank.turkishWords[Random.Range(0, wordBank.wordBank.turkishWords.Count)];
+            _currentWord = currentWordList[Random.Range(0, currentWordList.Count)];
             currentWordText.color = Color.white;
             currentWordText.text = _currentWord;
         }

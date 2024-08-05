@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using Data.UnityObjects;
 using UnityEngine;
@@ -7,11 +8,17 @@ namespace Utilities
 {
     public class TextReader : MonoBehaviour
     {
-        [SerializeField] private WordBankSO wordBankSo;
+        private WordBankSO _wordBankSo;
+
+        private void Awake()
+        {
+            _wordBankSo = Resources.Load<WordBankSO>($"Data/WordBank");
+        }
+
         private void Start()
         {
-            LoadWords("WordDatabaseTR.txt", wordBankSo.wordBank.turkishWords);
-            LoadWords("WordDatabaseEng.txt", wordBankSo.wordBank.englishWords);
+            LoadWords("WordDatabaseTR.txt", _wordBankSo.wordBank.turkishWords);
+            LoadWords("WordDatabaseEng.txt", _wordBankSo.wordBank.englishWords);
         }
 
         private void OnApplicationQuit()
@@ -38,8 +45,8 @@ namespace Utilities
         
         private void ClearWordLists()
         {
-            wordBankSo.wordBank.turkishWords.Clear();
-            wordBankSo.wordBank.englishWords.Clear();
+            _wordBankSo.wordBank.turkishWords.Clear();
+            _wordBankSo.wordBank.englishWords.Clear();
         }
     }
 }
