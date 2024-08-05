@@ -152,10 +152,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 826083301}
-  - {fileID: 1320149099}
+  - {fileID: 1444580375}
+  - {fileID: 516619136}
+  - {fileID: 907749828}
+  - {fileID: 547107631}
   - {fileID: 861210594}
-  - {fileID: 1323441021}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &113976084
@@ -809,7 +810,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 826083301}
+  m_Father: {fileID: 78613617}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &547107629
 GameObject:
@@ -840,7 +841,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d35991d159d411e9fcc645ea448fa69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordBankSo: {fileID: 11400000, guid: 77826e59a3fceeb48a20802a4f2d9595, type: 2}
 --- !u!4 &547107631
 Transform:
   m_ObjectHideFlags: 0
@@ -854,7 +854,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1320149099}
+  m_Father: {fileID: 78613617}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &651791037
 Transform:
@@ -951,7 +951,7 @@ GameObject:
   - component: {fileID: 682748101}
   - component: {fileID: 682748100}
   m_Layer: 5
-  m_Name: InputWord
+  m_Name: CurrentWord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1298,39 +1298,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 767473476}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &826083300
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 826083301}
-  m_Layer: 0
-  m_Name: Managers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &826083301
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 826083300}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 516619136}
-  - {fileID: 907749828}
-  m_Father: {fileID: 78613617}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &830645976
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,6 +1490,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 861210594}
+  - component: {fileID: 861210596}
+  - component: {fileID: 861210595}
   m_Layer: 0
   m_Name: Signals
   m_TagString: Untagged
@@ -1545,6 +1514,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 78613617}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &861210595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861210593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e90a6959d094e0390e296b74d30f4d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &861210596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861210593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4601caa6dfc444a688b62f4deca9f5d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &907749827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,7 +1568,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 826083301}
+  m_Father: {fileID: 78613617}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &907749829
 MonoBehaviour:
@@ -1589,7 +1582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a3e8adeab294030923eeb97f771b97e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputChecker: {fileID: 1444580374}
 --- !u!1 &967614882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1741,7 +1733,7 @@ GameObject:
   - component: {fileID: 1254767220}
   - component: {fileID: 1254767219}
   m_Layer: 5
-  m_Name: CurrentWord
+  m_Name: TargetWord
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1899,70 +1891,6 @@ Transform:
   - {fileID: 2750819036357547781}
   m_Father: {fileID: 204821999}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1320149098
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1320149099}
-  m_Layer: 0
-  m_Name: Controllers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1320149099
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1320149098}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 547107631}
-  m_Father: {fileID: 78613617}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1323441020
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1323441021}
-  m_Layer: 0
-  m_Name: Utilities
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1323441021
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1323441020}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1444580375}
-  m_Father: {fileID: 78613617}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1444580373
 GameObject:
   m_ObjectHideFlags: 0
@@ -1974,7 +1902,7 @@ GameObject:
   - component: {fileID: 1444580375}
   - component: {fileID: 1444580374}
   m_Layer: 0
-  m_Name: InputChecker
+  m_Name: InputHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1992,9 +1920,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e30fc3ee43d1f64a93ae5cb609a33e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  letterText: {fileID: 682748100}
-  currentWordText: {fileID: 1254767219}
-  wordBank: {fileID: 11400000, guid: 77826e59a3fceeb48a20802a4f2d9595, type: 2}
 --- !u!4 &1444580375
 Transform:
   m_ObjectHideFlags: 0
@@ -2008,7 +1933,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1323441021}
+  m_Father: {fileID: 78613617}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1446078829
 GameObject:
