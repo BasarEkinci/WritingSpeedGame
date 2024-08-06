@@ -6,7 +6,6 @@ using Inputs;
 using Signals;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Rendering;
 using Random = UnityEngine.Random;
 
 namespace Controller
@@ -15,11 +14,9 @@ namespace Controller
     {
         [SerializeField] private TextMeshProUGUI playerInputText;
         [SerializeField] private TextMeshProUGUI targetWordText;
-        
         [SerializeField] private InputHandler inputHandler;
-
         [SerializeField] private WordBankSO wordBank;
-
+        
         private List<string> _wordList;
         private string _playerInput;
         private string _targetWord;
@@ -50,7 +47,7 @@ namespace Controller
             if (!_isGameStarted) return;
             _playerInput = inputHandler.GetPlayerInput();
             playerInputText.color = _playerInput.Length > _targetWord.Length ? Color.red : Color.white;
-            if(Input.GetKeyDown(KeyCode.Space))
+            if(Input.GetKeyDown(KeyCode.Space) && _playerInput != "")
             {
                 _isCorrect = CheckWord();
                 SetTextColor();
