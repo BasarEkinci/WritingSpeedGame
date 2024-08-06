@@ -17,7 +17,6 @@ namespace UIs
             settingsPanel.transform.localScale = Vector3.zero;
             startPanel.SetActive(true);
             settingsPanel.SetActive(true);
-            gamePanel.SetActive(false);
         }
 
         public void CloseButton()
@@ -32,12 +31,12 @@ namespace UIs
         }
         public void InfoButton()
         {
-            
+            Application.OpenURL("https://github.com/BasarEkinci");
         }
         public void PlayButton()
         {
             startPanel.transform.DOMoveX(-443, 0.5f).SetEase(Ease.InBack);
-            gamePanel.SetActive(true);
+            gamePanel.transform.DOScaleY(1, 0.1f);
             CoreGameSignals.Instance.OnGameStart?.Invoke();
         }
     }

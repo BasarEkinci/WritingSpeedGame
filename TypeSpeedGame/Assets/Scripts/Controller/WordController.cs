@@ -22,11 +22,7 @@ namespace Controller
         private string _targetWord;
         private bool _isCorrect;
         private bool _isGameStarted;
-
-        private void Awake()
-        {
-            _wordList = wordBank.wordBank.englishWords;
-        }
+        
 
         private void OnEnable()
         {
@@ -59,6 +55,14 @@ namespace Controller
         
         private void OnGameStart()
         {
+            if(SettingsController.Instance.Language == Language.Turkish)
+            {
+                _wordList = wordBank.wordBank.turkishWords;
+            }
+            else
+            {
+                _wordList = wordBank.wordBank.englishWords;
+            }
             _targetWord = GetNewTargetWord(_wordList);
             targetWordText.text = _targetWord.ToLower();
             _isGameStarted = true;
