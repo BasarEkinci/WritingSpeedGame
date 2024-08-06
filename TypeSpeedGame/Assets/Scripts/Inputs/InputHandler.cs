@@ -4,10 +4,9 @@ namespace Inputs
 {
     public class InputHandler : MonoBehaviour
     {
-        private string _playerInput;
+        private string _playerInput = "";
         internal string GetPlayerInput()
         {
-            _playerInput = "";
             foreach (char c in Input.inputString) 
             { 
                 if (c == '\b') 
@@ -19,13 +18,18 @@ namespace Inputs
                 }
                 else 
                 { 
-                    if (Input.inputString != " " && Input.inputString != "\n" && Input.inputString != "\r") 
-                    { 
+                    if (Input.inputString != " " && Input.inputString != "\n" && Input.inputString != "\r")
+                    {
                         _playerInput += c;
                     } 
                 }
             }
             return _playerInput;
+        }
+        
+        internal void ClearPlayerInput()
+        {
+            _playerInput = "";
         }
     }
 }
