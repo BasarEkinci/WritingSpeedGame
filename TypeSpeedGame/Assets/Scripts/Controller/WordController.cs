@@ -22,7 +22,6 @@ namespace Controller
         private string _targetWord;
         private bool _isCorrect;
         private bool _isGameStarted;
-        
 
         private void OnEnable()
         {
@@ -46,6 +45,10 @@ namespace Controller
             if(Input.GetKeyDown(KeyCode.Space) && _playerInput != "")
             {
                 _isCorrect = CheckWord();
+                if (_isCorrect)
+                    TypingSignals.Instance.OnCorrectWord?.Invoke();
+                else
+                    TypingSignals.Instance.OnWrongWord?.Invoke();
                 SetTextColor();
                 ClearInputArea();
                 SetNewTargetWord();
@@ -55,13 +58,14 @@ namespace Controller
         
         private void OnGameStart()
         {
-            if(SettingsController.Instance.Language == Language.Turkish)
+            switch (SettingsController.Instance.Language)
             {
-                _wordList = wordBank.wordBank.turkishWords;
-            }
-            else
-            {
-                _wordList = wordBank.wordBank.englishWords;
+                case Language.Turkish:
+                    _wordList = wordBank.wordBank.turkishWords;
+                    break;
+                case Language.English:
+                    _wordList = wordBank.wordBank.englishWords;
+                    break;
             }
             _targetWord = GetNewTargetWord(_wordList);
             targetWordText.text = _targetWord.ToLower();

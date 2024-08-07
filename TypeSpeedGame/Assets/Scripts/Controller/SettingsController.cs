@@ -1,4 +1,5 @@
-﻿using Extensions;
+﻿using System;
+using Extensions;
 using UnityEngine;
 
 namespace Controller
@@ -27,7 +28,7 @@ namespace Controller
         private bool _isSwitchSoundOn;
         private Difficulty _difficulty;
         private Language _language;
-        
+
         internal void SetMusic(bool isMusicOn)
         {
             _isMusicOn = isMusicOn;
