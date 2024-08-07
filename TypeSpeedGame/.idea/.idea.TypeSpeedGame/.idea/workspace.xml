@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="677b2af9-a92b-4a92-beca-af5743b83b13" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TypeSpeedGame/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TypeSpeedGame/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controller/CarController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controller/CarController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/BotCarManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/BotCarManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerCarManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/PlayerCarManager.cs" afterDir="false" />
-    </list>
+    <list default="true" id="677b2af9-a92b-4a92-beca-af5743b83b13" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -117,7 +112,7 @@
       <workItem from="1722886110958" duration="5005000" />
       <workItem from="1722935988355" duration="18297000" />
       <workItem from="1723021902152" duration="7550000" />
-      <workItem from="1723038130763" duration="10867000" />
+      <workItem from="1723038130763" duration="11088000" />
     </task>
     <servers />
   </component>
