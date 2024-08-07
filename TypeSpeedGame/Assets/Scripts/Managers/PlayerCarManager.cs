@@ -53,6 +53,15 @@ namespace Managers
             TypingSignals.Instance.OnWrongWord -= OnWrongWord;
         }
 
+        private void OnTriggerEnter(Collider other)
+        {
+            if (other.CompareTag("Finish"))
+            {
+                _carController.StopCar();
+                Debug.Log("Race Finished");
+                RacingSignals.Instance.OnRaceEnd?.Invoke();
+            }
+        }
         private void OnWrongWord()
         {
             _carController.ReduceSpeed(acceleration);
@@ -76,7 +85,6 @@ namespace Managers
 
         private void OnRaceEnd()
         {
-            _carController.StopCar(acceleration);
         }
 
         private void OnRaceStart()

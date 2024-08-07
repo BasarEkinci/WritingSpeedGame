@@ -17,6 +17,7 @@ namespace Controller
         internal void MoveCar(Vector3 direction)
         {
             transform.position += direction * (_speed * Time.deltaTime);
+            Debug.Log(_speed);
         }
         internal void AnimatesTires(List<GameObject> tires)
         {
@@ -25,17 +26,9 @@ namespace Controller
                 tire.transform.Rotate(Vector3.right, _speed / 2f);
             }
         }
-        internal void StopCar(float value)
+        internal void StopCar()
         {
-            while (_speed > 0)
-            {
-                _speed -= value;
-                if (_speed < 0)
-                {
-                    _speed = 0;
-                    break;
-                }
-            }
+            _speed = Mathf.Lerp(_speed,0,Time.deltaTime);
         }
     }
 }
