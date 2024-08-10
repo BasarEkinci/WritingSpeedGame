@@ -5,10 +5,14 @@ namespace Controller
 {
     public class CarController : MonoBehaviour
     {
+        private const float MaxSpeed = 17f;
         private float _speed;
         internal void AddSpeed(float value)
         {
-            _speed += value;
+            if (_speed < MaxSpeed)
+            {
+                _speed += value;
+            }
         }
         internal void ReduceSpeed(float value)
         {

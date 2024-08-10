@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Controller;
 using Signals;
@@ -8,43 +7,41 @@ namespace Managers
 {
     public class BotCarManager : MonoBehaviour
     {
-        [SerializeField] private Transform endPoint;
-        [SerializeField] private Transform startPoint;
         [SerializeField] private List<GameObject> tires;
 
         private float _maxSpeed;
         private float _currentSpeed;
         private float _duration;
-        private float _elapsedTime;
         private bool _isRaceStarted;
-        private float _acceleration;
 
         private void OnEnable()
         {
             RacingSignals.Instance.OnRaceStart += OnRaceStart;
-            RacingSignals.Instance.OnRaceEnd += OnRaceEnd;
             CoreGameSignals.Instance.OnGameStart += OnGameStart;
         }
 
         private void Start()
         {
-            _maxSpeed = 14f;
+            _maxSpeed = 15f;
         }
 
         private void Update()
         {
             if (_isRaceStarted)
             {
-                SetAcceleration();
-                transform.position += Vector3.forward * (_currentSpeed * Time.deltaTime);
                 AnimateTires();
             }
+            else
+            {
+                StopCar();
+            }
+            transform.position += Vector3.forward * (_currentSpeed * Time.deltaTime);
+            Debug.Log(_currentSpeed);
         }
 
         private void OnDisable()
         {
             RacingSignals.Instance.OnRaceStart -= OnRaceStart;
-            RacingSignals.Instance.OnRaceEnd -= OnRaceEnd;
             CoreGameSignals.Instance.OnGameStart -= OnGameStart;
         }
 
@@ -52,7 +49,7 @@ namespace Managers
         {
             if (other.CompareTag("Finish"))
             {
-                _currentSpeed = Mathf.Lerp(_currentSpeed,0,Time.deltaTime);
+                _isRaceStarted = false;
             }
         }
 
@@ -61,27 +58,29 @@ namespace Managers
             switch (SettingsController.Instance.Difficulty)
             {
                 case Difficulty.Easy:
-                    _duration = 70f;
+                    _duration = 45f;
                     break;
                 case Difficulty.Medium:
-                    _duration = 55f;
+                    _duration = 30;
                     break;
                 case Difficulty.Hard:
-                    _duration = 45f;
+                    _duration = 45;
                     break;
                 case Difficulty.AgainstYourself:
                     break;
             }
         }
 
-        private void OnRaceEnd()
-        {
-            _isRaceStarted = false;   
-        }
-
         private void OnRaceStart()
         {
             _isRaceStarted = true;
+            _maxSpeed = 5f;
+        }
+        
+        private void StopCar()
+        {
+            float speed = Mathf.Lerp(_currentSpeed, 0, Time.deltaTime);
+            _currentSpeed = speed;
         }
         
         private void AnimateTires()
@@ -89,15 +88,6 @@ namespace Managers
             foreach (var tire in tires)
             {
                 tire.transform.Rotate(Vector3.right, 1000 * Time.deltaTime);
-            }
-        }
-        private void SetAcceleration()
-        {
-            if (_elapsedTime < _duration)
-            {
-                _elapsedTime += Time.deltaTime;
-                float t = _elapsedTime / _duration;
-                _currentSpeed = Mathf.Lerp(0, _maxSpeed, t);
             }
         }
     }

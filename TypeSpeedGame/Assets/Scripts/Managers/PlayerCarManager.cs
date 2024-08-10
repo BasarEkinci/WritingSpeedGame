@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Controller;
 using Signals;
 using UnityEngine;
@@ -38,9 +37,14 @@ namespace Managers
             }
             if(_isRaceStarted)
             {
-                _carController.MoveCar(Vector3.forward);
                 _carController.AnimatesTires(tires);
             }
+            else
+            {
+                _carController.StopCar();
+            }
+            
+            _carController.MoveCar(Vector3.forward);
         }
 
         private void OnDisable()
@@ -57,8 +61,6 @@ namespace Managers
         {
             if (other.CompareTag("Finish"))
             {
-                _carController.StopCar();
-                Debug.Log("Race Finished");
                 RacingSignals.Instance.OnRaceEnd?.Invoke();
             }
         }
@@ -85,6 +87,7 @@ namespace Managers
 
         private void OnRaceEnd()
         {
+            _isRaceStarted = false;
         }
 
         private void OnRaceStart()
